@@ -1,0 +1,62 @@
+drive.web-frontend_20210317.00_p0
+{
+  "@context": "https://schema.googleapis.com",
+  "@type": "ARArtifact",
+  "arTarget": {
+    "@type": "ARImageTarget",
+    "name" : "Title of experience",
+    "image": "http://www.google.com/target_image.jpg",
+
+    // width is optional. You can optionally use scale3D (described below) instead.
+    "width": <WIDTH_IN_METERS>,
+  },
+  "arContent": {
+    "@type": "ARNode",
+    "name": "Card Title",
+    "image": "http://www.google.com/card_image.jpg",
+    "url": "http://www.google.com",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Google",
+      "logo": "http://www.google.com/logo.jpg"
+    }
+    // arInitialAxisOrientation indicates whether the plane is vertical (ARAxisInherit)
+    // or horizontal (ARYAxisNormal). (The default is ARAxisInherit.)
+    "arInitialAxisOrientation": "ARAxisInherit OR ARYAxisNormal",
+
+    // translate3d is optional.
+    "translate3d": {
+      "x": <TRANSLATION_X>,
+      "y": <TRANSLATION_Y>,
+      "z": <TRANSLATION_Z>
+    },
+
+    // rotate3d is optional.
+    "rotate3d": {
+      "x": <ROTATION_X>,
+      "y": <ROTATION_Y>,
+      "z": <ROTATION_Z>,
+      "w": <ROTATION_W>
+    },
+
+    // scale3d is optional.
+    "scale3D": <SCALE>,
+
+    "associatedMedia": {
+      "@type": "3DModel",
+      "name": "Model Title",
+      "encoding": {
+        "@type": "MediaObject",
+        "contentUrl": "http://www.google.com/model.glb",
+        "encodingFormat": "model/gltf-binary"
+      },
+
+      // audio is optional.
+      "audio": {
+        "@type":"AudioObject",
+        "contentUrl": "https://example.com/audio.mp3",
+        "encodingFormat": "audio/mpeg"
+      }
+    }
+  }
+}
